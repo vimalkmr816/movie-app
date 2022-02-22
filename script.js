@@ -90,11 +90,11 @@ function showDetails(data, card_div) {
     for (let i = 0; i < data.length; i++) {
         if (cardId == data[i].id) {
             modalBody.innerHTML =
-                `<div class="main_info  d-flex justify-content-start align-items-center">
-                        <div class="poster  m-4 w-50">
+                `<div class="main_info  d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start align-items-center align-content-center flex-wrap flex-sm-nowrap">
+                        <div class="poster  m-sm-4 w-75 w-sm-100">
                             <img src=" ${IMG_URL + data[i].poster_path}" class="w-100 p-1 shadow-lg" id=" poster_img ">
                         </div>
-                        <div class=" text p-4  ms-0 mt-4 w-50 align-self-start">
+                        <div class=" text p-4  ms-0 mt-4 w-sm-50 w-100 align-self-start">
                             <h4 class=" title fs-1 fw-bold"> ${data[i].title}</h4>
                             <p class=" date_time fs-5">Release Date : ${data[i].release_date}</p>
                             <div class=" rating d-inline-flex align-items-center p-2  rounded-3 ${getColor(data[i].vote_average)}">
