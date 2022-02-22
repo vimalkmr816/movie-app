@@ -19,16 +19,17 @@ body {
     border-radius: 5px;
 }
 
-.green {
-    color: green;
-    border: 2px solid green;
+.green_bg {
+    color: whitesmoke;
+    background-color: #5cb85c;
+    
 }
-.orange {
-    color: orange;
-    border: 2px solid orange;
+.orange_bg {
+    color: whitesmoke;
+    background-color: #f0ad4e;
 }
 
-.red {
-    color: red;
-    border: 2px solid red;
+.red_bg {
+    color: whitesmoke;
+    background-color: #d9534f;
 }

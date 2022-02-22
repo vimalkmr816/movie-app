@@ -23,8 +23,8 @@ function getMovies(url) {
             showMovies(data.results);
             movieContainer.addEventListener("click", (e) => {
                 // if (!detailSectionOpen) {
-                const cardDiv = e.target.closest("div");
-                // console.log(cardDiv);
+                const cardDiv = e.target.closest("article");
+                console.log(cardDiv);
                 showDetails(data.results, cardDiv);
                 // }
             });
@@ -50,31 +50,26 @@ function showMovies(data) {
             //     <img src= ${IMG_URL + Math.random(movie.poster_path)} class="d-block w-100 rounded-3" alt="...">
             // </div>`
             movieDiv.innerHTML = ` 
-            <div class="card d-flex justify-content-evenly flex-column my-4 border-0 shadow"  data-bs-toggle="modal"
-            data-bs-target="#modelId" style="width: 18rem;" id="${movie.id
-                }">
-                <img src= ${IMG_URL + movie.poster_path
-                } class=" border border-0 w-100 card-img-top shadow" alt="${movie.title
-                }">
-                <div class="card-body d-flex justify-content-between align-items-start ">
-                <div className="movie_title">
-                <h5 class="fw-bold m-0 p-2">${movie.title
-                }</h5>
+            <article class="card d-flex justify-content-evenly flex-column my-4 border-0 shadow"  data-bs-toggle="modal"
+            data-bs-target="#modelId" style="width: 18rem;" id="${movie.id}">
+                <img src= ${IMG_URL + movie.poster_path} class=" border border-0 w-100 card-img-top shadow" alt="${movie.title}">
+                <div class="card-body d-flex justify-content-between align-items-start " data-bs-toggle="modal"
+                data-bs-target="#modelId">
+                <h5 class="m-0 p-2" data-bs-toggle="modal"
+                data-bs-target="#modelId">${movie.title}</h5>
+                <h5 class="px-4 py-1 rounded-3 ${getColor(movie.vote_average)}" data-bs-toggle="modal"
+                data-bs-target="#modelId">${movie.vote_average}</h5>
                 </div>
-                <h5 class="fw-bold px-4 py-1 rounded-3  ${getColor(
-                    movie.vote_average
-                )}">${movie.vote_average}</h5>
-                </div>
-            </div>`;
+            </article>`;
         }
         movieContainer.append(movieDiv);
     });
 }
 
 function getColor(value) {
-    if (value >= 8.0) return "green";
-    else if (value >= 5.0) return "orange";
-    else return "red";
+    if (value >= 8.0) return "green_bg";
+    else if (value >= 5.0) return "orange_bg";
+    else return "red_bg";
 }
 
 form.addEventListener("submit", (e) => {
@@ -102,9 +97,9 @@ function showDetails(data, card_div) {
                         <div class=" text p-4  ms-0 mt-4 w-50 align-self-start">
                             <h4 class=" title fs-1 fw-bold"> ${data[i].title}</h4>
                             <p class=" date_time fs-5">Release Date : ${data[i].release_date}</p>
-                            <div class=" rating d-inline-flex align-items-center p-2  rounded-3" style="background-color: ${getColor(data[i].vote_average)};">
+                            <div class=" rating d-inline-flex align-items-center p-2  rounded-3 ${getColor(data[i].vote_average)}">
                                 <img src=" ./images/imdb.png " alt="imdb_logo" class="me-3 ms-1" style=" width: 40px;">
-                                <p class=" fw-bold rating_num m-0 fs-4 "  >${data[i].vote_average}</p>
+                                <p class=" rating_num mb-0 me-2 fs-4 "  >${data[i].vote_average}</p>
                             </div>
                             <div class=" cta_section my-5 gap-3 d-flex flex-wrap">
                                 <button class=" watch_now border fw-bold border-0 py-3 px-4 text-light bg-success rounded-3 ">WATCH NOW</button>
