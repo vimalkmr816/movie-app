@@ -27,10 +27,11 @@ Users should be able to:
 - The movies should be fetched from the api and displayed in a nice layout which is easily accessible.
 - The search functionality should allow users to search their favourite movies.
 ### Desktop Screenshot
+<img src="./design/desktop_cropped.jpg" alt="desktop_screenshot" />
 
-![Desktop Screenshot](./design/desktop.png)
 ### Mobile Screenshot
-![Mobile Screenshot](./design/mobile.png)
+  <img src="./design/mobile.png" alt="mobile_screenshot" style="width:60%;"/>
+
 
 
 ### Links
