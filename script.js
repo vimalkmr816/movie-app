@@ -74,9 +74,7 @@ function getColor(value) {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    window.scrollTo({
-        top: 900,
-        left: 900,
+    movieContainer.scrollIntoView({
         behavior: 'smooth'
     })
     const searchTerm = search.value;
